@@ -1,4 +1,3 @@
-import '@aws-cdk/assert/jest';
 import {
     App as cdkApp,
 } from 'aws-cdk-lib';
