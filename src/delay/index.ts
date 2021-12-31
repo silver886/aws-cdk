@@ -1,21 +1,21 @@
 import {
-    Arn as cdkArn,
+    Arn as CdkArn,
+    Stack as CdkStack,
     custom_resources as cdkCustomResources,
-    Stack as cdkStack,
 } from 'aws-cdk-lib';
 import {
-    Construct as cdkConstruct,
+    Construct as AwsConstruct,
 } from 'constructs';
 import type {
-    IDependable as cdkIDependable,
+    IDependable as AwsIDependable,
 } from 'constructs';
 
 export interface DelayProps {
-    readonly dependencies: cdkIDependable[];
+    readonly dependencies: AwsIDependable[];
 }
 
-export class Delay extends cdkConstruct {
-    public constructor(scope: cdkConstruct, id: string, props: DelayProps) {
+export class Delay extends AwsConstruct {
+    public constructor(scope: AwsConstruct, id: string, props: DelayProps) {
         super(scope, id);
 
         const delaySdkCall: cdkCustomResources.AwsSdkCall = {
@@ -29,11 +29,11 @@ export class Delay extends cdkConstruct {
             onUpdate:     delaySdkCall,
             onDelete:     delaySdkCall,
             policy:       cdkCustomResources.AwsCustomResourcePolicy.fromSdkCalls({
-                resources: [cdkArn.format({
+                resources: [CdkArn.format({
                     service:  'sts',
                     region:   '',
                     resource: '',
-                }, cdkStack.of(this))],
+                }, CdkStack.of(this))],
             }),
         });
         delay.node.addDependency(...props.dependencies);

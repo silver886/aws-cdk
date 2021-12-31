@@ -1,9 +1,9 @@
 import {
-    Names as cdkNames,
-    Resource as cdkResource,
+    Names as AwsNames,
+    Resource as AwsResource,
 } from 'aws-cdk-lib';
 
-export class Name extends cdkResource {
+export class Name extends AwsResource {
     /**
      * Returns a path from root (stack) to node.
      */
@@ -17,7 +17,7 @@ export class Name extends cdkResource {
      * The identifier includes a human readable portion rendered
      * from the path components and a hash suffix.
      */
-    public readonly logical: string = cdkNames.uniqueId(this);
+    public readonly logical: string = AwsNames.uniqueId(this);
 
     /**
      * Returns a CloudFormation-compatible unique identifier for a construct based on its stack name and path.
