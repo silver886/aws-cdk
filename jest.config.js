@@ -1,9 +1,34 @@
+/* eslint-disable import/no-commonjs, import/unambiguous */
 module.exports = {
-    testEnvironment: 'node',
-    roots: [
-        '<rootDir>/lib/test',
+    preset:            'ts-jest',
+    testEnvironment:   'node',
+    clearMocks:        true,
+    collectCoverage:   true,
+    coverageReporters: [
+        'json',
+        'lcov',
+        'clover',
+        'cobertura',
+        'text',
     ],
-    testMatch: [
-        '**/*.test.js',
+    coverageDirectory: 'jest-reports/cobertura',
+    testRegex:         [
+        `${__dirname}(/src/(.*/)?__tests__/.*|/(test|src)/(.*/)?.*\\.(test|spec))\\.[jt]sx?$`,
+    ],
+    coveragePathIgnorePatterns: [
+        '/node_modules/',
+    ],
+    testPathIgnorePatterns: [
+        '/node_modules/',
+    ],
+    watchPathIgnorePatterns: [
+        '/node_modules/',
+    ],
+    reporters: [
+        'default', [
+            'jest-junit', {
+                outputDirectory: 'jest-reports/junit',
+            },
+        ],
     ],
 };
