@@ -1,56 +1,49 @@
-import {
-    DefaultStackSynthesizer,
-    Fn,
-    Names as AwsNames,
-    Resource as AwsResource,
-} from 'aws-cdk-lib';
+import {DefaultStackSynthesizer, Fn} from 'aws-cdk-lib';
 
-export class DefaultStackSynthesizerRoleArn {
+export const DEFAULT_STACK_SYNTHESIZER: {
+    readonly defaultCloudformationRoleArn: string;
+    readonly defaultDeployRoleArn: string;
+    readonly defaultFileAssetPublishingRoleArn: string;
+    readonly defaultImageAssetPublishingRoleArn: string;
+    readonly defaultLookupRoleArn: string;
+} = {
     /**
      * Default CloudFormation role ARN.
-     *
-     * @stability stable
      */
-    static readonly defaultCloudformation = Fn.sub(DefaultStackSynthesizer.DEFAULT_CLOUDFORMATION_ROLE_ARN, {
-                        Qualifier: DefaultStackSynthesizer.DEFAULT_QUALIFIER,
-                    })
+    defaultCloudformationRoleArn: Fn.sub(DefaultStackSynthesizer.DEFAULT_CLOUDFORMATION_ROLE_ARN, {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        Qualifier: DefaultStackSynthesizer.DEFAULT_QUALIFIER,
+    }),
 
-/**
+    /**
      * Default deploy role ARN.
-     *
-     * @stability stable
      */
-    static readonly defaultDeploy = Fn.sub(DefaultStackSynthesizer.DEFAULT_DEPLOY_ROLE_ARN, {
-                        Qualifier: DefaultStackSynthesizer.DEFAULT_QUALIFIER,
-                    })
+    defaultDeployRoleArn: Fn.sub(DefaultStackSynthesizer.DEFAULT_DEPLOY_ROLE_ARN, {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        Qualifier: DefaultStackSynthesizer.DEFAULT_QUALIFIER,
+    }),
 
-/**
+    /**
      * Default asset publishing role ARN for file (S3) assets.
-     *
-     * @stability stable
      */
-    static readonly defaultFileAssetPublishing = Fn.sub(DefaultStackSynthesizer.DEFAULT_FILE_ASSET_PUBLISHING_ROLE_ARN, {
-                        Qualifier: DefaultStackSynthesizer.DEFAULT_QUALIFIER,
-                    })
+    defaultFileAssetPublishingRoleArn: Fn.sub(DefaultStackSynthesizer.DEFAULT_FILE_ASSET_PUBLISHING_ROLE_ARN, {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        Qualifier: DefaultStackSynthesizer.DEFAULT_QUALIFIER,
+    }),
 
-/**
+    /**
      * Default asset publishing role ARN for image (ECR) assets.
-     *
-     * @stability stable
      */
-    static readonly defaultImageAssetPublishing = Fn.sub(DefaultStackSynthesizer.DEFAULT_IMAGE_ASSET_PUBLISHING_ROLE_ARN, {
-                        Qualifier: DefaultStackSynthesizer.DEFAULT_QUALIFIER,
-                    })
+    defaultImageAssetPublishingRoleArn: Fn.sub(DefaultStackSynthesizer.DEFAULT_IMAGE_ASSET_PUBLISHING_ROLE_ARN, {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        Qualifier: DefaultStackSynthesizer.DEFAULT_QUALIFIER,
+    }),
 
-/**
+    /**
      * Default lookup role ARN for missing values.
-     *
-     * @stability stable
      */
-    static readonly defaultLookup = Fn.sub(DefaultStackSynthesizer.DEFAULT_LOOKUP_ROLE_ARN, {
-                        Qualifier: DefaultStackSynthesizer.DEFAULT_QUALIFIER,
-                    })
-
-
-
-}
+    defaultLookupRoleArn: Fn.sub(DefaultStackSynthesizer.DEFAULT_LOOKUP_ROLE_ARN, {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        Qualifier: DefaultStackSynthesizer.DEFAULT_QUALIFIER,
+    }),
+};
