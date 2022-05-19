@@ -13,6 +13,7 @@ specifiers:
   eslint-import-resolver-typescript: ^2
   eslint-plugin-import: ^2
   jest: ^28.1.0
+  jest-junit: ^13.2.0
   leasot: ^13.1.0
   ts-jest: ^28.0.2
   ts-node: ^10.7.0
@@ -33,6 +34,7 @@ devDependencies:
   constructs: 10.1.11
   eslint: 8.15.0
   jest: 28.1.0_c966ca8a4fa95cbc5f52fc54f43b4f93
+  jest-junit: 13.2.0
   leasot: 13.1.0
   ts-jest: 28.0.2_863acde8f66073d610345a87311f22cf
   ts-node: 10.7.0_b556aeb4bf95f3c06070f32f8a1debab
@@ -2445,6 +2447,16 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /jest-junit/13.2.0:
+    resolution: {integrity: sha512-B0XNlotl1rdsvFZkFfoa19mc634+rrd8E4Sskb92Bb8MmSXeWV9XJGUyctunZS1W410uAxcyYuPUGVnbcOH8cg==}
+    engines: {node: '>=10.12.0'}
+    dependencies:
+      mkdirp: 1.0.4
+      strip-ansi: 6.0.1
+      uuid: 8.3.2
+      xml: 1.0.1
+    dev: true
+
   /jest-leak-detector/28.1.0:
     resolution: {integrity: sha512-uIJDQbxwEL2AMMs2xjhZl2hw8s77c3wrPaQ9v6tXJLGaaQ+4QrNJH5vuw7hA7w/uGT/iJ42a83opAqxGHeyRIA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
@@ -2890,6 +2902,12 @@ packages:
   /minimist/1.2.6:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: false
+
+  /mkdirp/1.0.4:
+    resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dev: true
 
   /ms/2.0.0:
     resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
@@ -3558,6 +3576,11 @@ packages:
       punycode: 2.1.1
     dev: true
 
+  /uuid/8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
+    dev: true
+
   /v8-compile-cache-lib/3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
     dev: true
@@ -3622,6 +3645,10 @@ packages:
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 3.0.7
+    dev: true
+
+  /xml/1.0.1:
+    resolution: {integrity: sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=}
     dev: true
 
   /y18n/5.0.8:

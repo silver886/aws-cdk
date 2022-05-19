@@ -6,9 +6,8 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "comments": "leasot --ignore node_modules/** .git/** --tags NOTE OPTIMIZE TODO HACK XXX FIXME BUG --filetype .ts **",
-    "watch-pretest": "tsc -p ./test/tsconfig.json --watch",
     "watch-test": "jest --coverage --watchAll",
-    "test": "tsc -p ./test/tsconfig.json && jest --coverage",
+    "test": "jest --coverage",
     "prepare": "tsc",
     "prepublishOnly": "pnpm test"
   },
@@ -39,6 +38,7 @@
     "constructs": "^10.1.11",
     "eslint": "^8.15.0",
     "jest": "^28.1.0",
+    "jest-junit": "^13.2.0",
     "leasot": "^13.1.0",
     "ts-jest": "^28.0.2",
     "ts-node": "^10.7.0",
